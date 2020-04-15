@@ -7,7 +7,7 @@ import 'package:maa/Pages/PatientDashboard.dart';
 void main() {
   runApp(
       MaterialApp(
-        home: AuthThreePage(
+        home: IntroSixPage(
         ),
       ));
 }

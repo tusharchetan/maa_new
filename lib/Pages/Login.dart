@@ -180,7 +180,7 @@ class _AuthThreePageState extends State<AuthThreePage> {
     Api().getMessage().then((value){
       m = value;
     });
-    if(Utilities().getOrientation(context)==1)
+
     return Scaffold(
         body: Container(child: Row(
           children: <Widget>[
@@ -309,14 +309,10 @@ Navigator.push(context, CupertinoPageRoute(builder: (context)=> QuizPage(questio
             )
           ],
         )));
-    else{
-      return Scaffold(
-        body: LefTUI(),
-      );
     }
   }
 
-}
+
 
 class LefTUI extends StatefulWidget {
   @override
@@ -354,7 +350,7 @@ class _LefTUIState extends State<LefTUI> {
                   child: Column(
                     children: <Widget>[
                       Text(
-                        "Welcome",
+                        "MAA",
                         style: TextStyle(
                           color: Colors.white,
                           fontWeight: FontWeight.w500,
@@ -363,7 +359,7 @@ class _LefTUIState extends State<LefTUI> {
                       ),
                       const SizedBox(height: 10.0),
                       Text(
-                        "to Master Aggregator App for 360\u1d52 Healthcare ",
+                        "Master Aggregator App for 360\u1d52 Healthcare ",
                         style: TextStyle(
                           color: Colors.white70,
                           fontSize: 18.0,

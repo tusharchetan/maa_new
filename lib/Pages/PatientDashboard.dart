@@ -101,7 +101,6 @@ class _LeftUIState extends State<LeftUI> {
                           children: [
                             Text("HOSPITAL",style: TextStyle(fontWeight: FontWeight.bold),),
                             Text("BED AVAILABLE",style: TextStyle(fontWeight: FontWeight.bold)),
-                            Text("CRITICAL CARE AVAILABlE",style: TextStyle(fontWeight: FontWeight.bold)),
                             Text("PREBOOK",style: TextStyle(fontWeight: FontWeight.bold)),
                           ],),
                       ),
@@ -158,7 +157,7 @@ class _LeftUIState extends State<LeftUI> {
                           children: [
                             Text("City Hospital"),
                             Text("NO"),
-                            Text("YES"),
+                       //     Text("YES"),
                             RaisedButton(child: Text("Apply Here"),onPressed: (){
                               return showDialog<void>(
                                 context: context,

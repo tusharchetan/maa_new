@@ -330,115 +330,121 @@ class _RightUIState extends State<RightUI> {
               child: Text("Bed Avaibility",style: TextStyle(fontSize: 20),),
             ),
             Divider(thickness: 2,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                  width: 200,
-                  child: Column(
-                    children: [
-                      MaterialButton(),
-                      RaisedButton(child: Text("Select Name"),onPressed: (){},)
-                    ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    width: 200,
+                    child: Column(
+                      children: [
+                        MaterialButton(),
+                        RaisedButton(child: Text("Select Name"),onPressed: (){},)
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                  width: 200,
-                  child: Column(
-                    children: [
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("G",style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("G",style: TextStyle(fontWeight: FontWeight.bold),),
-                          Text("G",style: TextStyle(fontWeight: FontWeight.bold),),
-                        ],
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 30,
-                            child: TextFormField(
+                  Container(
+                    width: 200,
+                    child: Column(
+                      children: [
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text("G",style: TextStyle(fontWeight: FontWeight.bold),),
+                            Text("C",style: TextStyle(fontWeight: FontWeight.bold),),
+                            Text("I  ",style: TextStyle(fontWeight: FontWeight.bold),),
+                          ],
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Container(
+                              width: 30,
+                              child: TextFormField(
 
+                              ),
                             ),
-                          ),
-                          Container(
-                            width: 30,
-                            child: TextFormField(
+                            Container(
+                              width: 30,
+                              child: TextFormField(
 
+                              ),
                             ),
-                          ),
-                          Container(
-                            width: 30,
-                            child: TextFormField(
+                            Container(
+                              width: 30,
+                              child: TextFormField(
 
-                            ),
-                          )
+                              ),
+                            )
 
-                        ],
-                      ),
-                    ],
+                          ],
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Align(alignment: Alignment.center,
               child: Text("Stock Requirement",style: TextStyle(fontSize: 20),),
             ),
             Divider(thickness: 2,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                Container(
-                 width: 200,
-                  child: Column(
-                    children: [
-                      MaterialButton(),
-                      RaisedButton(child: Text("Select Name"),onPressed: (){},)
-                    ],
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                   width: 200,
+                    child: Column(
+                      children: [
+                        MaterialButton(),
+                        RaisedButton(child: Text("Select Name"),onPressed: (){},)
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                width: 200,
-                  child: Column(
-                    children: [
+                  Container(
+                  width: 200,
+                    child: Column(
+                      children: [
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                            children: [
+                              Text("R",style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text("A",style: TextStyle(fontWeight: FontWeight.bold),),
+                              Text("In  ",style: TextStyle(fontWeight: FontWeight.bold),),
+                            ],
+                          ),
                         Row(
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
-                            Text("G",style: TextStyle(fontWeight: FontWeight.bold),),
-                            Text("G",style: TextStyle(fontWeight: FontWeight.bold),),
-                            Text("G",style: TextStyle(fontWeight: FontWeight.bold),),
+                            Container(
+                              width: 30,
+                              child: TextFormField(
+
+                              ),
+                            ),
+                            Container(
+                              width: 30,
+                              child: TextFormField(
+
+                              ),
+                            ),
+                            Container(
+                              width: 30,
+                              child: TextFormField(
+
+                              ),
+                            )
+
                           ],
                         ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Container(
-                            width: 30,
-                            child: TextFormField(
-
-                            ),
-                          ),
-                          Container(
-                            width: 30,
-                            child: TextFormField(
-
-                            ),
-                          ),
-                          Container(
-                            width: 30,
-                            child: TextFormField(
-
-                            ),
-                          )
-
-                        ],
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
             Container(
               color: Colors.orangeAccent

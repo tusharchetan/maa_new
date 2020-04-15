@@ -63,99 +63,98 @@ class Dashboard1 extends StatefulWidget {
 class _Dashboard1State extends State<Dashboard1> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Container(
-          child: Column(
-            children: [
-              Card(
-                elevation: 4,
-                child: Container(
-                  child: Padding(
-                    padding: const EdgeInsets.all(12.0),
-                    child: Column(
-                      children: [
-                        Text("Patient Turnover"),
-                        Text("Distribution"),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Medicine"),
-                            Text("21"),
-                            Container(
-                              width: 60,
-                              height: 60,
-                              child: DonutPieChart.withSampleData(),
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Medicine"),
-                            Text("21"),
-                            Container(
-                              width: 60,
-                              height: 60,
-                              child: DonutPieChart.withSampleData(),
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Medicine"),
-                            Text("21"),
-                            Container(
-                              width: 60,
-                              height: 60,
-                              child: DonutPieChart.withSampleData(),
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Medicine"),
-                            Text("21"),
-                            Container(
-                              width: 60,
-                              height: 60,
-                              child: DonutPieChart.withSampleData(),
-                            )
-                          ],
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            Text("Medicine"),
-                            Text("21"),
-                            Container(
-                              width: 60,
-                              height: 60,
-                              child: DonutPieChart.withSampleData(),
-                            )
-                          ],
-                        ),
-                      ],
-                    ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Container(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            Card(
+              elevation: 4,
+              child: Container(
+                child: Padding(
+                  padding: const EdgeInsets.all(12.0),
+                  child: Column(
+                    children: [
+                      Text("Patient Turnover"),
+                      Text("Distribution"),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Medicine"),
+                          Text("21"),
+                          Container(
+                            width: 60,
+                            height: 60,
+                            child: DonutPieChart.withSampleData(),
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Medicine"),
+                          Text("21"),
+                          Container(
+                            width: 60,
+                            height: 60,
+                            child: DonutPieChart.withSampleData(),
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Medicine"),
+                          Text("21"),
+                          Container(
+                            width: 60,
+                            height: 60,
+                            child: DonutPieChart.withSampleData(),
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Medicine"),
+                          Text("21"),
+                          Container(
+                            width: 60,
+                            height: 60,
+                            child: DonutPieChart.withSampleData(),
+                          )
+                        ],
+                      ),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text("Medicine"),
+                          Text("21"),
+                          Container(
+                            width: 60,
+                            height: 60,
+                            child: DonutPieChart.withSampleData(),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
-                  height: Utilities().getScreenHeights(context)*.30,
-                  decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                          begin: Alignment.centerLeft,
-                          end: Alignment.centerRight,
-                          colors: [Colors.redAccent, Colors.white])),
                 ),
+                height: Utilities().getScreenHeights(context)*.34,
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.centerLeft,
+                        end: Alignment.centerRight,
+                        colors: [Colors.redAccent, Colors.white])),
               ),
-              Container(
-                height: 200,
-                child: StackedAreaLineChart.withSampleData(),
+            ),
+            Container(
+              height: 200,
+              child: StackedAreaLineChart.withSampleData(),
 
-              )
-            ],
-          ),
+            )
+          ],
         ),
       ),
     );
@@ -172,7 +171,7 @@ class _Dashboard2State extends State<Dashboard2> {
     return SingleChildScrollView(
       child: Container(
         child: Column(
-
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
 
             Card(
@@ -326,7 +325,7 @@ class _Dashboard3State extends State<Dashboard3> {
               elevation: 4,
               child: Container(
                 width: MediaQuery.of(context).size.width,
-                height: 580,
+                height: 650,
                 decoration: BoxDecoration(
                     gradient: LinearGradient(
                         begin: Alignment.centerLeft,

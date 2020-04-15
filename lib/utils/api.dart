@@ -174,4 +174,32 @@ String link = baseURL+"login";
     return data["NewsData"];
   }
 
+  Future<dynamic> bookBed(String name,String hospitalNumber){
+  print("hello");
+    String link = baseURL+"genrateRegNo";
+    var t= {
+      "name":name,
+      "mobile" : Patient.mobile,
+    "hos_mobile" : hospitalNumber
+
+    };
+    print(json.encode(t));
+    return http.post(
+        link,headers: {
+      "Content-Type": "application/json;charset=utf-8"
+    }, body: json.encode(t)).then((dynamic val) {
+      print(val.body);
+      return json.decode(val.body);
+    });
+  }
+  Future<List<dynamic>> searchHospital(String t) async
+  {
+    String link=baseURL+"SearchHospital/$t";
+    print(link);
+    http.Response response = await http.get(link);
+    var data =json.decode(response.body);
+    print(data);
+    return data["hospitalData"];
+  }
+
 }

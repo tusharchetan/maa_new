@@ -1,12 +1,14 @@
 import 'package:flushbar/flushbar.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:maa/Pages/AdminDashboard.dart';
 import 'package:maa/Pages/HospitalDashboard.dart';
 import 'package:maa/Pages/PatientDashboard.dart';
 import 'package:maa/Pages/SignUPPatient.dart';
 import 'package:maa/Pages/SignupPage.dart';
 import 'package:maa/Pages/SignupVendor.dart';
 import 'package:maa/Pages/VendorDashboard.dart';
+import 'package:maa/Pages/emergency.dart';
 import 'package:maa/Singletons.dart';
 import 'package:maa/utils/api.dart';
 import 'package:maa/utils/models.dart';
@@ -15,6 +17,7 @@ import 'package:maa/widgets/quiz/category.dart';
 import 'package:maa/widgets/quiz/demo_values.dart';
 import 'package:maa/widgets/quiz/questions.dart';
 import 'package:maa/widgets/quiz/quiz_page.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 
 class AuthThreePage extends StatefulWidget {
@@ -163,7 +166,14 @@ class _AuthThreePageState extends State<AuthThreePage> {
     );
 
   }
-
+  _launchURL() async {
+    const url = 'https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en_IN';
+    if (await canLaunch(url)) {
+      await launch(url);
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
   @override
   Widget build(BuildContext context) {
     List m ;
@@ -214,22 +224,23 @@ Navigator.push(context, CupertinoPageRoute(builder: (context)=> QuizPage(questio
                       elevation: 20,
                       child: Container(
                         width: Utilities().getScreenWidth(context)*2/5,
-                        height: Utilities().getScreenWidth(context)/8,
+                        height: Utilities().getScreenWidth(context)/7,
                         child: Padding(
                           padding: EdgeInsets.all(20),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("News Feed :"),
-                              FutureBuilder(
-                              future: Api().getMessage(),
-                              builder: (BuildContext context2,
-                              AsyncSnapshot<dynamic> snapshot) {
-
-                                return Container();
-                              }
-                              )
+                              Text("News Feed :",style: TextStyle(fontWeight: FontWeight.bold),),
+                             Divider(),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("Coronavirus live updates: MHA issues new guidelines on the national lockdown"),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: Text("Pompeo says China did not give Americans access when needed the most"),
+                              ),
 
                             ],
                           ),
@@ -241,14 +252,27 @@ Navigator.push(context, CupertinoPageRoute(builder: (context)=> QuizPage(questio
                       elevation: 20,
                       child: Container(
                         width: Utilities().getScreenWidth(context)*2/5,
-                        height: Utilities().getScreenWidth(context)/8,
+                        height: Utilities().getScreenWidth(context)/7,
                         child: Padding(
                           padding: EdgeInsets.all(20),
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Government Regulation :")
+                              Text("Government Regulation :",style: TextStyle(fontWeight: FontWeight.bold),),
+                              Divider(),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: InkWell(onTap: (){
+
+                                },child: Text("https://www.mohfw.gov.in/pdf/EssentialservicesduringCOVID19updated0411201.pdf",style: TextStyle(color: Colors.blue),)),
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.all(8.0),
+                                child: InkWell(onTap: (){
+
+                                },child: Text("https://www.mohfw.gov.in/pdf/advisorydrinkingwaterpdf.pdf",style: TextStyle(color: Colors.blue),)),
+                              ),
                             ],
                           ),
                         ),
@@ -267,7 +291,12 @@ Navigator.push(context, CupertinoPageRoute(builder: (context)=> QuizPage(questio
                             mainAxisAlignment: MainAxisAlignment.start,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Download links:")
+                              Text("Download links:",style: TextStyle(fontWeight: FontWeight.bold),),
+                              Divider(),
+                              Text("Help india fight with corona Download Aarogya Setu App "),
+                              InkWell(onTap: (){
+
+                              },child: Text("https://play.google.com/store/apps/details?id=nic.goi.aarogyasetu&hl=en_IN",style: TextStyle(color: Colors.blue),))
                             ],
                           ),
                         ),
@@ -334,7 +363,7 @@ class _LefTUIState extends State<LefTUI> {
                       ),
                       const SizedBox(height: 10.0),
                       Text(
-                        "Good Morning.\nWelcome to the Maa Hospital. ",
+                        "to Master Aggregator App for 360\u1d52 Healthcare ",
                         style: TextStyle(
                           color: Colors.white70,
                           fontSize: 18.0,
@@ -395,8 +424,10 @@ class _LefTUIState extends State<LefTUI> {
                     borderRadius: BorderRadius.circular(20.0),
                   ),
                   icon: Icon(Icons.block),
-                  label: Text("Continue with Google"),
-                  onPressed: () {},
+                  label: Text("Emergency Help"),
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder:(context)=>EmergencyScreen()));
+                  },
                 ),
                 const SizedBox(height: 20.0),
               ],
@@ -483,7 +514,7 @@ class Login extends StatefulWidget {
 
 class _LoginState extends State<Login> {
   int index;
-  List _loginType = ["Hospital", "Vendor", "Patient"];
+  List _loginType = ["Hospital", "Vendor", "Patient","Admin"];
   String _currentLoginType;
   List<DropdownMenuItem<String>> _dropDownMenuItems;
   @override
@@ -501,6 +532,7 @@ class _LoginState extends State<Login> {
         _currentLoginType = selectedDist;
       });
 
+      //   currentBlock = _dropDownMenuItems2[0].value;
       //   currentBlock = _dropDownMenuItems2[0].value;
     });
   }
@@ -590,9 +622,16 @@ keyboardType: TextInputType.visiblePassword,
                       }
                     else if(val["rollId"]=="3")
                     {
+                      ;
                       Api().getPatient(textEditingController.text).then((value) {
+                        Patient.name=value["patientData"][0]["name"];
+                        Patient.mobile=value["patientData"][0]["mobile"];
                         Navigator.push(context, MaterialPageRoute(builder:(context)=>PatientDashboard()));
                       });
+                    }
+                    else if(val["rollId"]=="4")
+                    {
+                        Navigator.push(context, MaterialPageRoute(builder:(context)=>AdminDashboard()));
                     }
                   }
               });
